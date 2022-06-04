@@ -1,0 +1,53 @@
+version: '3.0'
+
+services:
+  main:
+    container_name: main
+    hostname: main
+    image: ilau020203/back_for_web_prog
+    build:
+      context:  ./back_for_web_prog
+      dockerfile: Dockerfile
+    env_file:
+      - back_for_web_prog/.development.env
+    # volumes:
+    #   - /back_for_web_prog:/app
+    #   - /app/node_modules
+    ports:
+      - 5000:5000
+    depends_on:
+      - postgres
+    restart: always
+  postgres:
+    container_name: postgres
+    image: postgres:12
+    env_file:
+      - back_for_web_prog/.development.env
+    environment:
+      PG_DATA: /var/lib/postgresql/data
+      POSTGRES_PASSWORD: ilau020203
+      POSTGRES_HOST: postgres
+      POSTGRES_USER: ilau
+      POSTGRESS_PORT: 5432
+    ports:
+      - 5432:5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: always
+  react-nginx-app:
+    image: ilau020203/project_web_prog
+    stdin_open: true
+    build:
+      context:  ./project_web_prog
+      dockerfile: Dockerfile
+    expose:
+      - 80
+    ports:
+      - 80:80
+    environment:
+        - CHOKIDAR_USEPOLLING=true
+    depends_on:
+      - main
+    restart: always
+volumes:
+  pgdata:

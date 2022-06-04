@@ -1,0 +1,92 @@
+body{
+  background-color: #ffff ;
+}
+
+:root {
+  --width-navbar: 20%;
+  --hight-header: 7%;
+}
+
+.App {
+  text-align: center;
+  background-color: #f5f5f5;
+  display: block;
+  
+}
+a {
+  color: var(--text_link);
+  text-decoration: none;
+}
+ a:hover{
+  cursor: pointer;
+  color: rgb(100, 100, 100);
+  transition: 1.15s;
+  background-color: rgb(25, 25, 25);
+}
+
+button{
+  position: relative;
+}
+
+header{
+  position: fixed;
+  height: var(--hight-header);
+  background-color: rgb(25, 25, 25);
+  width: 100%;
+  top: 0;
+  z-index: 320;
+  display: flex;
+  flex-direction: row;
+}
+
+logo:hover{
+  cursor: pointer;  
+  background-color: rgb(35, 35, 35);
+}
+
+img{
+  border-radius: 1%;
+}
+
+nav{
+  position: fixed;
+  height: calc( 100% - var(--hight-header));
+  width: var(--width-navbar);
+  top:  var(--hight-header);
+  z-index: 120;
+  background-color: rgb(50, 50, 50);
+}
+
+h1{
+  text-align: center;
+  font-family: 'Roboto';
+}
+
+h4{
+  text-align: center;
+  font-family: 'Kaushan', cursive;
+  color: whitesmoke;
+}
+
+h5{
+  text-align: center;
+  font-family: 'Engine', 'Pecita', 'Roboto';
+  color: whitesmoke;
+}
+
+main{
+  text-align: left;
+  position: fixed;
+  height: calc( 100% - var(--hight-header));
+  width: calc( 100% - var(--width-navbar));
+  left: var(--width-navbar);
+  top: var(--hight-header);
+  z-index: 120;
+  background-color: rgb(50, 50, 50);
+  overflow: scroll
+}
+
+#button{
+  display: flex;
+  justify-content: flex-end;
+}

@@ -1,0 +1,12 @@
+.env
+yarn-error.log
+dist/
+dist/*
+node_modules
+node_modules/*
+package-lock.json
+uploads/
+uploads/*
+.idea/
+.idea/*
+.eslintcache

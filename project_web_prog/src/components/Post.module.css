@@ -1,0 +1,25 @@
+.main{
+    background-color: white;
+    margin: 2em;
+    border-radius: 5%;
+    padding: 1rem;
+}
+
+.picture{
+    max-width: 90%;
+}
+.info{
+    width: 100%;
+    padding: auto;
+    display: flex;
+    flex-flow: row;
+}
+.avatar{
+    height: 3em;
+    width: 3em;
+    border-radius: 100%;
+    
+}
+.infoText{
+    padding-left: 1rem;
+}
